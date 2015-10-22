@@ -488,6 +488,10 @@ class PHPExcel_Reader_OOCalc extends PHPExcel_Reader_Abstract implements PHPExce
 //                                echo '<br />Cell Data Text';
 //                                print_r($cellDataText);
 //                                echo '<br />';
+
+                                if (isset($cellDataText->p) && isset($cellDataText->p->a)) {
+                                    $cellDataText->p = $cellDataText->p->a;
+                                }
 //
                                 $type = $formatting = $hyperlink = null;
                                 $hasCalculatedValue = false;
